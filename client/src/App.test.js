@@ -1,5 +1,4 @@
 import '@testing-library/jest-dom/extend-expect';
-import 'mutationobserver-shim';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
@@ -10,3 +9,13 @@ it('renders without crashing', () => {
   ReactDOM.render(<App />, div);
   ReactDOM.unmountComponentAtNode(div);
 });
+
+test('player is found', () => {
+  const {getByText} = render(<App />);
+  getByText(/player/i);
+});
+
+test('darkMode is found', () =>{
+  const {getByAltText} = render(<App />);
+  getAllByAltText(/darkmode/i);
+})

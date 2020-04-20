@@ -24,7 +24,7 @@ Demonstrate your understanding of this Sprint's concepts by answering the follow
 
 - [x] Why would you use class component over function components (removing hooks from the question)?
 - [ ] Name three lifecycle methods and their purposes.
-- [ ] What is the purpose of a custom hook?
+- [x] What is the purpose of a custom hook?
 - [x] Why is it important to test our apps?
 
 ## Project Set Up

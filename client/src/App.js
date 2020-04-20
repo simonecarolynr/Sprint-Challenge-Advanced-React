@@ -16,7 +16,7 @@ function App () {
     return (
       <div className="App">
         <h1>Most Popular Women's World Cup Soccer Players</h1>
-            <div  onClick={toggleMode} className="dark-mode_toggle">
+            <div alt='darkmode' onClick={toggleMode} className="dark-mode_toggle">
               <div className={darkMode ? 'toggle toggled' : 'toggle'} />
             </ div>
             <div>
