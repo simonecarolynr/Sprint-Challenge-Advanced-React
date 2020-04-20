@@ -1,21 +1,14 @@
 import React from 'react';
 
-export default class Players extends React.Component {
-    constructor(props) {
-        super();
-    };
+export default function Players(props){
+    
+    return (
 
+        <div className='player-cards' key={props.id}>
+            <h1>{props.name}</h1>
+            <h3>{props.country}</h3>
+            <h4>{props.searches}</h4>
+        </div>
+    )
 
-    render() {
-        let { name, country, searches, id } = this.props;
-
-        return (
-            <div id={id}>
-                <h1>{name}</h1>
-                <h2>{country}</h2>
-                <h4>{searches}</h4>
-            </div>
-        )
-
-    };
 };

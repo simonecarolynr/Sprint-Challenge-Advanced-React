@@ -1,55 +1,30 @@
 import React from 'react';
-import axios from 'axios';
-import Players from './Players';
+import AllPlayers from './AllPlayers';
 import './App.css';
+import useDarkMode from './hooks/useDarkMode';
 
-class App extends React.Component {
-  constructor() {
-    super();
+function App () {
 
-    this.state = {
-      name: '',
-      country: '',
-      searches: '',
-      id: ''
-    }
-  }
 
-  componentDidMount() {
-    axios
-      .get('http://localhost:5000/api/players')
-      .then(response => {
-        console.log(response.data)
-        let player = response.data[0];
+    const [darkMode, setDarkMode] = useDarkMode(false);
 
-        this.setState({
-          name: player.name,
-          country: player.country,
-          searches: player.searches,
-          id: player.id
+    const toggleMode = e => {
+      e.preventDefault();
+      setDarkMode(!darkMode);
+    };
 
-        })
-      })
-      .catch(error => {
-        console.log(error)
-      })
-  }
-  
-  render() {
     return (
       <div className="App">
-        <Players
-          name={this.state.name}
-          country={this.state.country}
-          searches={this.state.searches}
-          id={this.state.id} 
-          />
+        <h1>Most Popular Women's World Cup Soccer Players</h1>
+            <div  onClick={toggleMode} className="dark-mode_toggle">
+              <div className={darkMode ? 'toggle toggled' : 'toggle'} />
+            </ div>
+            <div>
+              <AllPlayers/>
+            </div> 
       </div>
-    )
+    );
 
-  }
-
-
-}
+};
 
 export default App;
